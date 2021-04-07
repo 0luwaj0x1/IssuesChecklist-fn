@@ -1,0 +1,14 @@
+{
+  "name": "Icissueslist-fn",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/asyncmania/IssuesChecklist-fn.git",
+  "author": "Josiah Ilesanmi <ilesanmi.josiah@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "axios": "0.21.1"
+  }
+}
