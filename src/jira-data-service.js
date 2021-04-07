@@ -33,14 +33,14 @@ async function getData(resultCallback) {
     (component) => component.assigneeType !== "COMPONENT_LEAD"
   );
 
-  async function iterator(index) {
+   function iterator(index) {
     if (index === componentsWithoutLeads.length) {
       return resultCallback(results);
     }
 
     const component = componentsWithoutLeads[index];
 
-    await getComponentIssues(component, (result) => {
+     getComponentIssues(component, (result) => {
       results.push({ ...component, issuesCount: result });
       resetState()
       iterator(index + 1)
