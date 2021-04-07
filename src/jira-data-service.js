@@ -26,7 +26,7 @@ async function getComponentIssues(component, iteratorCallback) {
 }
 
 async function getData(resultCallback) {
-  
+
   const allComponents = await getComponents();
 
   const componentsWithoutLeads = allComponents.filter(
