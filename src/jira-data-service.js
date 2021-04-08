@@ -13,10 +13,17 @@ function getComponents() {
 async function getComponentIssues(component, iteratorCallback) {
 
   const url =`${baseUrl}/search?jql=component%20%3D%20${component.id}%20&maxResults=${maxResults}&startAt=${issues.length}`
-  const currentComponent = await getRequest({url});
-  
-  total = currentComponent.total;
-  issues = issues.concat(currentComponent.issues)
+
+  try {
+    const currentComponent = await getRequest({url});
+    total = currentComponent.total;
+    issues = issues.concat(currentComponent.issues)
+    
+  } catch (error) {
+    console.error(error.message)
+    return
+  }
+
  
   while (total !== issues.length) {
     await getComponentIssues(component, () => {})
